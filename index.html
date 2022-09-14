@@ -26,24 +26,45 @@
 		<main class="container">
 			<section class="products">
 				<ul class="ul__items">
-					<li class="item card">
+					<li class="item card bg-gray-0">
 						<div class="card__head">
 							<img src="./img/jaqueta.svg" alt="jaqueta" />
 						</div>
-						<div class="card__body">
-							<div class="clas small">Camisetas</div>
+						<div class="card__body bg-white">
+							<div class="clas small bg-primary fw-bold">Camisetas</div>
 							<h3 class="title h3">Jaqueta de couro</h3>
 							<p class="desc bodybold">
 								Jaqueta preta de couro, lorem ipsum dolum. Muito boa para o
 								inverno ou para pilotar motos.
 							</p>
-							<p class="price">R$ 100,00</p>
+							<p class="price fw-bold text-primary">R$ 100,00</p>
 							<a class="add__cart bodybold"> Adicionar ao Carrinho </a>
 						</div>
 					</li>
 				</ul>
 			</section>
-			<section class="cart"></section>
+			<section class="cart">
+				<div class="search__box">
+					<input
+						class="bg-gray-0"
+						type="text"
+						name="pesquisa"
+						placeholder="Pesquise um item..."
+					/>
+					<button class="bg-secondary fw-bold">Pesquisar</button>
+				</div>
+				<div class="cart__box">
+					<div class="cart__title fw-bold bg-secondary">
+						Carrinho de Compras
+					</div>
+					<div class="cart__content bg-gray-0">
+						<div class="vazio">
+							<h3 class="h3">Carrinho Vazio</h3>
+							<p class="bodybold">Adicione items</p>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 		<script src="./js/index.js"></script>
 	</body>
