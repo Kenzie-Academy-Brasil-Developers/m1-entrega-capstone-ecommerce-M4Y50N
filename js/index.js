@@ -80,6 +80,10 @@ addCartButtons.forEach((btn) => {
 				for (let i = 0; i < carrinho.children.length; i++) {
 					if (id == parseInt(carrinho.children[i].id.substring(2))) {
 						carrinho.children[i].remove();
+						qtdTotal.innerText = carrinho.childElementCount;
+
+						total -= x.value;
+						totalPreco.innerText = `R$ ${total},00`;
 						break;
 					}
 				}
