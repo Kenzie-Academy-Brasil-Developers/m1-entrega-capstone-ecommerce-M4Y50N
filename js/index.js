@@ -189,4 +189,34 @@ for (let i = 0; i < navUl.childElementCount; i++) {
 	});
 }
 
-function pesquisar(pesquisa) {}
+// function pesquisar() {
+// 	let pes = document.querySelector(".search__box input");
+
+// 	"pet alo oi".split(" ").forEach((x) => {
+// 		if (x == pes.value) {
+// 			data.forEach((k) => {
+// 				let li = document.createElement("li");
+// 				li.classList.add("item");
+// 				li.classList.add("card");
+// 				li.classList.add("bg-gray-0");
+
+// 				li.innerHTML = `
+//                     <div class="card__head">
+//                         <img src="${k.img}" alt="${k.nameItem}" />
+//                     </div>
+//                     <div class="card__body bg-white">
+//                         <div class="clas small bg-primary fw-bold">${k.tag}</div>
+//                         <h3 class="title h3">${k.nameItem}</h3>
+//                         <p class="desc bodybold">
+//                             ${k.description}
+//                         </p>
+//                         <p class="price fw-bold text-primary">R$ ${k.value}</p>
+//                         <a id="p_${k.id}" class="add__cart bodybold"> ${k.addCart} </a>
+//                     </div>
+//                 `;
+
+// 				ul.appendChild(li);
+// 			});
+// 		}
+// 	});
+// }
