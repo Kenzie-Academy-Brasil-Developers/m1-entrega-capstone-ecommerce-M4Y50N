@@ -118,6 +118,14 @@ nav {
 
 .nav__items ul > * {
 	margin: 0px 10px;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.nav__items ul li:hover {
+	cursor: pointer;
+
+	text-shadow: 0px 0px 1px var(--grey-50);
 }
 
 main {

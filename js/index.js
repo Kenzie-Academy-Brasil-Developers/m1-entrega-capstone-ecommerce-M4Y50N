@@ -1,5 +1,7 @@
 //renderizar produtos no html
 let ul = document.querySelector(".ul__items");
+let elementosLi = [];
+
 data.forEach((x) => {
 	let li = document.createElement("li");
 	li.classList.add("item");
@@ -21,10 +23,12 @@ data.forEach((x) => {
         </div>
     `;
 
+	elementosLi.push(li);
+
 	ul.appendChild(li);
 });
 
-//add produtos no carrinho
+//add/rem produtos no carrinho
 let addCartButtons = document.querySelectorAll(".add__cart");
 let carrinho = document.querySelector(".cart__content");
 let vazio = document.querySelector(".vazio");
@@ -71,3 +75,118 @@ addCartButtons.forEach((btn) => {
 		});
 	});
 });
+
+//filtro
+let navUl = document.querySelector(".nav__items ul ");
+
+for (let i = 0; i < navUl.childElementCount; i++) {
+	navUl.children[i].addEventListener("click", (event) => {
+		let e = event.target;
+		ul.innerHTML = "";
+		if (e.innerText == "Acessórios") {
+			data.forEach((x) => {
+				if (x.tag == "Acessórios") {
+					let li = document.createElement("li");
+					li.classList.add("item");
+					li.classList.add("card");
+					li.classList.add("bg-gray-0");
+
+					li.innerHTML = `
+                    <div class="card__head">
+                        <img src="${x.img}" alt="${x.nameItem}" />
+                    </div>
+                    <div class="card__body bg-white">
+                        <div class="clas small bg-primary fw-bold">${x.tag}</div>
+                        <h3 class="title h3">${x.nameItem}</h3>
+                        <p class="desc bodybold">
+                            ${x.description}
+                        </p>
+                        <p class="price fw-bold text-primary">R$ ${x.value}</p>
+                        <a id="p_${x.id}" class="add__cart bodybold"> ${x.addCart} </a>
+                    </div>
+                `;
+
+					ul.appendChild(li);
+				}
+			});
+		} else if (e.innerText == "Calçados") {
+			data.forEach((x) => {
+				if (x.tag == "Calçados") {
+					let li = document.createElement("li");
+					li.classList.add("item");
+					li.classList.add("card");
+					li.classList.add("bg-gray-0");
+
+					li.innerHTML = `
+                    <div class="card__head">
+                        <img src="${x.img}" alt="${x.nameItem}" />
+                    </div>
+                    <div class="card__body bg-white">
+                        <div class="clas small bg-primary fw-bold">${x.tag}</div>
+                        <h3 class="title h3">${x.nameItem}</h3>
+                        <p class="desc bodybold">
+                            ${x.description}
+                        </p>
+                        <p class="price fw-bold text-primary">R$ ${x.value}</p>
+                        <a id="p_${x.id}" class="add__cart bodybold"> ${x.addCart} </a>
+                    </div>
+                `;
+
+					ul.appendChild(li);
+				}
+			});
+		} else if (e.innerText == "Camisetas") {
+			data.forEach((x) => {
+				if (x.tag == "Camisetas") {
+					let li = document.createElement("li");
+					li.classList.add("item");
+					li.classList.add("card");
+					li.classList.add("bg-gray-0");
+
+					li.innerHTML = `
+                    <div class="card__head">
+                        <img src="${x.img}" alt="${x.nameItem}" />
+                    </div>
+                    <div class="card__body bg-white">
+                        <div class="clas small bg-primary fw-bold">${x.tag}</div>
+                        <h3 class="title h3">${x.nameItem}</h3>
+                        <p class="desc bodybold">
+                            ${x.description}
+                        </p>
+                        <p class="price fw-bold text-primary">R$ ${x.value}</p>
+                        <a id="p_${x.id}" class="add__cart bodybold"> ${x.addCart} </a>
+                    </div>
+                `;
+
+					ul.appendChild(li);
+				}
+			});
+		} else {
+			data.forEach((x) => {
+				let li = document.createElement("li");
+				li.classList.add("item");
+				li.classList.add("card");
+				li.classList.add("bg-gray-0");
+
+				li.innerHTML = `
+                    <div class="card__head">
+                        <img src="${x.img}" alt="${x.nameItem}" />
+                    </div>
+                    <div class="card__body bg-white">
+                        <div class="clas small bg-primary fw-bold">${x.tag}</div>
+                        <h3 class="title h3">${x.nameItem}</h3>
+                        <p class="desc bodybold">
+                            ${x.description}
+                        </p>
+                        <p class="price fw-bold text-primary">R$ ${x.value}</p>
+                        <a id="p_${x.id}" class="add__cart bodybold"> ${x.addCart} </a>
+                    </div>
+                `;
+
+				ul.appendChild(li);
+			});
+		}
+	});
+}
+
+function pesquisar(pesquisa) {}
