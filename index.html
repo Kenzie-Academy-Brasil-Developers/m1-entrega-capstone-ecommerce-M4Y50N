@@ -6,6 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Market</title>
 		<link rel="stylesheet" href="./css/style.css" />
+		<script src="./js/database.js" defer></script>
+		<script src="./js/index.js" defer></script>
 	</head>
 	<body>
 		<header>
@@ -38,7 +40,7 @@
 								inverno ou para pilotar motos.
 							</p>
 							<p class="price fw-bold text-primary">R$ 100,00</p>
-							<a class="add__cart bodybold"> Adicionar ao Carrinho </a>
+							<a id="p_1" class="add__cart bodybold"> Adicionar ao Carrinho </a>
 						</div>
 					</li> -->
 				</ul>
@@ -62,10 +64,19 @@
 							<h3 class="h3">Carrinho Vazio</h3>
 							<p class="bodybold">Adicione items</p>
 						</div>
+						<!-- <div class="item__cart">
+							<div class="item__cart__img bg-white">
+								<img src="./img/jaqueta.svg" alt="" />
+							</div>
+							<div class="info">
+								<div class="item__cart__nome h4">Jaqueta</div>
+								<div class="item__cart__preco h4 text-primary">R$ 100</div>
+								<div class="remover small">Remover</div>
+							</div>
+						</div> -->
 					</div>
 				</div>
 			</section>
 		</main>
-		<script src="./js/index.js"></script>
 	</body>
 </html>

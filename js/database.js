@@ -61,5 +61,3 @@ const data = [
 		tag: ["Camisetas"],
 	},
 ];
-
-export default data;

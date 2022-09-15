@@ -122,24 +122,26 @@ nav {
 
 main {
 	margin-top: 50px !important;
+	padding-bottom: 50px;
 
 	display: flex;
 	justify-content: space-between;
-	gap: 50px;
+
+	gap: 20px;
 }
 
 .ul__items {
 	list-style: none;
 	display: flex;
-	justify-content: space-between;
 
-	row-gap: 20px;
+	column-gap: 10px;
+	row-gap: 30px;
 
 	flex-wrap: wrap;
 }
 
 .card {
-	width: 270px;
+	width: 290px;
 
 	border: 2px solid var(--grey-0);
 	transition: all 0.3s ease-in-out;
@@ -183,6 +185,7 @@ main {
 }
 
 .cart {
+	width: 290px;
 	display: flex;
 	flex-direction: column;
 	row-gap: 30px;
@@ -194,14 +197,18 @@ main {
 
 .search__box input,
 .search__box button {
-	padding: 15px 10px;
-
 	border-radius: 0;
 	border: none;
 }
 
+.search__box input {
+	padding: 15px 0px 15px 3px;
+}
+
 .search__box button {
 	cursor: pointer;
+
+	padding: 15px 5px;
 
 	transition: all 0.3s ease-in-out;
 }
@@ -220,6 +227,13 @@ main {
 	min-height: 200px;
 	height: 200px;
 	max-height: 400px;
+
+	display: flex;
+	flex-direction: column;
+
+	row-gap: 10px;
+
+	overflow-y: auto;
 }
 
 .vazio {
@@ -235,4 +249,32 @@ main {
 
 .hidden {
 	display: none;
+}
+
+.item__cart {
+	padding: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.item__cart__img {
+	width: 70px;
+	height: 70px;
+
+	text-align: center;
+
+	margin-right: 20px;
+}
+
+.item__cart__img img {
+	width: 100%;
+}
+
+.info > * {
+	margin: 5px 0px;
+}
+
+.remover:hover {
+	cursor: pointer;
+	text-decoration: underline;
 }
