@@ -40,14 +40,14 @@ addCartButtons.forEach((btn) => {
 		data.forEach((x) => {
 			if (x.id == id) {
 				carrinho.innerHTML += `
-                <div class="item__cart">
+                <div id="d_${x.id}"  class="item__cart">
                     <div class="item__cart__img bg-white">
                         <img src="${x.img}" alt="" />
                     </div>
                     <div class="info">
                         <div class="item__cart__nome h4">${x.nameItem}</div>
                         <div class="item__cart__preco h4 text-primary">R$ ${x.value}</div>
-                        <div id="p_${x.id}"  class="remover small" onclick=remover()>Remover</div>
+                        <div id="c_${x.id}"  class="remover small" onclick=remover()>Remover</div>
                     </div>
                 </div>`;
 			}
@@ -64,10 +64,11 @@ function remover() {
 			let idBtn = e.id;
 			let id = parseInt(idBtn.substring(2));
 
-			data.forEach((x) => {
-				if (x.id == id) {
+			for (let i = 0; i < carrinho.children.length; i++) {
+				if (id == parseInt(carrinho.children[i].id.substring(2))) {
+					carrinho.children[i].remove();
 				}
-			});
+			}
 		});
 	});
 }
