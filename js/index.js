@@ -57,6 +57,7 @@ addCartButtons.forEach((btn) => {
 
 function remover() {
 	let rmCart = document.querySelectorAll(".remover");
+	console.log(carrinho);
 
 	rmCart.forEach((btn) => {
 		btn.addEventListener("click", (event) => {
@@ -67,6 +68,7 @@ function remover() {
 			for (let i = 0; i < carrinho.children.length; i++) {
 				if (id == parseInt(carrinho.children[i].id.substring(2))) {
 					carrinho.children[i].remove();
+					break;
 				}
 			}
 		});
