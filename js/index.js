@@ -32,6 +32,10 @@ data.forEach((x) => {
 let addCartButtons = document.querySelectorAll(".add__cart");
 let carrinho = document.querySelector(".cart__content");
 let vazio = document.querySelector(".vazio");
+let qtdTotal = document.querySelector(".quantidade");
+
+let totalPreco = document.querySelector(".preco__total");
+let total = 0;
 
 addCartButtons.forEach((btn) => {
 	btn.addEventListener("click", (event) => {
@@ -43,6 +47,14 @@ addCartButtons.forEach((btn) => {
 
 		data.forEach((x) => {
 			if (x.id == id) {
+				let divTotal = document.querySelector(".total");
+				divTotal.classList.remove("hidden");
+
+				qtdTotal.innerText = carrinho.childElementCount;
+
+				total += x.value;
+				totalPreco.innerText = `R$ ${total},00`;
+
 				carrinho.innerHTML += `
                 <div id="d_${x.id}"  class="item__cart">
                     <div class="item__cart__img bg-white">
