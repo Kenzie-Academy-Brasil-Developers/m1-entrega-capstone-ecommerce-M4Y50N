@@ -47,30 +47,27 @@ addCartButtons.forEach((btn) => {
                     <div class="info">
                         <div class="item__cart__nome h4">${x.nameItem}</div>
                         <div class="item__cart__preco h4 text-primary">R$ ${x.value}</div>
-                        <div id="c_${x.id}"  class="remover small" onclick=remover()>Remover</div>
+                        <div id="c_${x.id}"  class="remover small" >Remover</div>
                     </div>
                 </div>`;
 			}
 		});
-	});
-});
 
-function remover() {
-	let rmCart = document.querySelectorAll(".remover");
-	console.log(carrinho);
+		let rmCart = document.querySelectorAll(".remover");
 
-	rmCart.forEach((btn) => {
-		btn.addEventListener("click", (event) => {
-			let e = event.target;
-			let idBtn = e.id;
-			let id = parseInt(idBtn.substring(2));
+		rmCart.forEach((btn) => {
+			btn.addEventListener("click", (event) => {
+				let e = event.target;
+				let idBtn = e.id;
+				let id = parseInt(idBtn.substring(2));
 
-			for (let i = 0; i < carrinho.children.length; i++) {
-				if (id == parseInt(carrinho.children[i].id.substring(2))) {
-					carrinho.children[i].remove();
-					break;
+				for (let i = 0; i < carrinho.children.length; i++) {
+					if (id == parseInt(carrinho.children[i].id.substring(2))) {
+						carrinho.children[i].remove();
+						break;
+					}
 				}
-			}
+			});
 		});
 	});
-}
+});
