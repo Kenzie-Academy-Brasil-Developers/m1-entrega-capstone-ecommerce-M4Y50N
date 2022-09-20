@@ -1,6 +1,5 @@
 //renderizar produtos no html
 let ul = document.querySelector(".ul__items");
-let elementosLi = [];
 
 data.forEach((x) => {
 	let li = document.createElement("li");
@@ -22,24 +21,55 @@ data.forEach((x) => {
             </p>
 			<div>
             	<p class="price fw-bold text-primary">R$ ${x.value}</p>
-            	<a id="p_${x.id}" class="add__cart bodybold"> ${x.addCart} </a>
+            	<a id="p_${x.id}" class="add__cart bodybold" onclick="addItem(event.target)"> ${x.addCart} </a>
 			</div>
         </div>
     `;
 
-	elementosLi.push(li);
-
 	ul.appendChild(li);
 });
 
-let itemCarrinho = `
-                <div id="d_${x.id}"  class="item__cart">
-                    <div class="item__cart__img bg-white">
-                        <img src="${x.img}" alt="" />
-                    </div>
-                    <div class="info">
-                        <div class="item__cart__nome h4">${x.nameItem}</div>
-                        <div class="item__cart__preco h4 text-primary">R$ ${x.value}</div>
-                        <div id="c_${x.id}"  class="remover small" >Remover</div>
-                    </div>
-                </div>`;
+//add item in cart
+let carrinho = document.querySelector(".cart__content");
+
+//add item
+let divTotal = document.querySelector(".total"),
+	vazio = document.querySelector(".vazio");
+
+function addItem(item) {
+	divTotal.classList.remove("hidden");
+
+	carrinho.removeChild(vazio);
+
+	let id = item.id.substring(2),
+		dataItem = data[id];
+
+	carrinho.innerHTML += `
+			<div id="d_${id}"  class="item__cart">
+				<div class="item__cart__img bg-white">
+					<img src="${dataItem.img}" alt="" />
+				</div>
+				<div class="info">
+					<div class="item__cart__nome h4">${dataItem.nameItem}</div>
+					<div class="item__cart__preco h4 teitemt-primary">R$ ${dataItem.value}</div>
+					<div id="c_${id}"  class="remover small" onclick="rmItem(event.target)">Remover</div>
+				</div>
+			</div>`;
+}
+
+//remove item
+function rmItem(item) {
+	let items = carrinho.children;
+
+	for (let i = 0; items.length > i; i++) {
+		if (items[i].id.substring(2) == item.id.substring(2)) {
+			carrinho.removeChild(item.parentNode.parentNode);
+			break;
+		}
+	}
+
+	if (carrinho.childElementCount == 0) {
+		divTotal.classList.toggle("hidden");
+		carrinho.appendChild(vazio);
+	}
+}

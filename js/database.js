@@ -1,7 +1,7 @@
 // Banco de dados dos produtos
 const data = [
 	{
-		id: 1,
+		id: 0,
 		img: "./img/pikachu.png",
 		nameItem: "Pikachu",
 		description: "Pokemon de tipo elétrico, com altos atributos de SPD e ATK.",
@@ -10,7 +10,7 @@ const data = [
 		tag: ["Elétrico"],
 	},
 	{
-		id: 5,
+		id: 1,
 		img: "./img/raichu.png",
 		nameItem: "Raichu",
 		description:
@@ -30,7 +30,7 @@ const data = [
 		tag: ["Planta/Veneno"],
 	},
 	{
-		id: 7,
+		id: 3,
 		img: "./img/ivysaur.png",
 		nameItem: "Ivysaur",
 		description:
@@ -40,7 +40,7 @@ const data = [
 		tag: ["Planta/Veneno"],
 	},
 	{
-		id: 6,
+		id: 4,
 		img: "./img/venusaur.png",
 		nameItem: "Venusaur",
 		description:
@@ -50,7 +50,7 @@ const data = [
 		tag: ["Planta/Veneno"],
 	},
 	{
-		id: 3,
+		id: 5,
 		img: "./img/charmander.png",
 		nameItem: "Charmander",
 		description:
@@ -60,7 +60,7 @@ const data = [
 		tag: ["Fogo"],
 	},
 	{
-		id: 8,
+		id: 6,
 		img: "./img/charmeleon.png",
 		nameItem: "Charmeleon",
 		description: "Esse pokemon tem um alto atributo de SPATK e SPD.",
@@ -69,7 +69,7 @@ const data = [
 		tag: ["Fogo"],
 	},
 	{
-		id: 9,
+		id: 7,
 		img: "./img/charizard.png",
 		nameItem: "Charizard",
 		description:
@@ -79,7 +79,7 @@ const data = [
 		tag: ["Fogo/Voador"],
 	},
 	{
-		id: 4,
+		id: 8,
 		img: "./img/squirtle.png",
 		nameItem: "Squirtle",
 		description: "Pokemon de tipo água, com altos atributos de SPDEF e DEF.",
@@ -88,7 +88,7 @@ const data = [
 		tag: ["Água"],
 	},
 	{
-		id: 10,
+		id: 9,
 		img: "./img/Wartortle.png",
 		nameItem: "Wartortle",
 		description: "Pokemon de tipo água, com altos atributos de SPDEF e DEF.",
@@ -97,7 +97,7 @@ const data = [
 		tag: ["Água"],
 	},
 	{
-		id: 11,
+		id: 10,
 		img: "./img/blastoise.png",
 		nameItem: "Blastoise",
 		description: "Pokemon de tipo água, com altos atributos de SPDEF e DEF.",
