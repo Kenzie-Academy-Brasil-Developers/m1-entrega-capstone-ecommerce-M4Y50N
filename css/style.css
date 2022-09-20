@@ -137,6 +137,15 @@ nav {
 	text-shadow: 0px 0px 1px var(--grey-50);
 }
 
+.team__rocket {
+	height: 300px;
+
+	background-image: url("https://images5.alphacoders.com/114/1140435.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center -200px;
+}
+
 main {
 	margin-top: 50px !important;
 	padding-bottom: 50px;

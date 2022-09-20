@@ -34,15 +34,25 @@ let carrinho = document.querySelector(".cart__content");
 
 //add item
 let divTotal = document.querySelector(".total"),
+	total = 0,
 	vazio = document.querySelector(".vazio");
 
 function addItem(item) {
 	divTotal.classList.remove("hidden");
 
-	carrinho.removeChild(vazio);
+	try {
+		carrinho.removeChild(vazio);
+	} catch (e) {
+		carrinho;
+	}
 
 	let id = item.id.substring(2),
 		dataItem = data[id];
+
+	// let repetidos = [];
+	// carrinho.childNodes.forEach((x) => {
+	// 	x.id != undefined ? repetidos.push(x.id) : x;
+	// });
 
 	carrinho.innerHTML += `
 			<div id="d_${id}"  class="item__cart">
@@ -55,6 +65,10 @@ function addItem(item) {
 					<div id="c_${id}"  class="remover small" onclick="rmItem(event.target)">Remover</div>
 				</div>
 			</div>`;
+
+	total += dataItem.value;
+
+	document.querySelector(".preco__total").innerText = `R$ ${total}`;
 }
 
 //remove item
