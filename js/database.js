@@ -105,4 +105,84 @@ const data = [
 		addCart: "Adicionar ao carrinho",
 		tag: ["Água"],
 	},
+	{
+		id: 11,
+		img: "../img/Insignia_Rocha.webp",
+		nameItem: "Insígnia Rocha",
+		description:
+			"Insígnia Rocha, obtenha derrotando Brock no ginásio de tipo Pedra ou compre aqui!",
+		value: 300,
+		addCart: "Adicionar ao carrinho",
+		tag: ["Insignia"],
+	},
+	{
+		id: 12,
+		img: "../img/Insignia_Cascata.webp",
+		nameItem: "Insígnia Cascata",
+		description:
+			"Insígnia Cascata, obtenha derrotando Misty no ginásio de tipo Água ou compre aqui!",
+		value: 350,
+		addCart: "Adicionar ao carrinho",
+		tag: ["Insignia"],
+	},
+	{
+		id: 13,
+		img: "../img/Insignia_Trovao.webp",
+		nameItem: "Insígnia Trovao",
+		description:
+			"Insígnia Trovao, obtenha derrotando Sg. Surge no ginásio de tipo Elétrico ou compre aqui!",
+		value: 400,
+		addCart: "Adicionar ao carrinho",
+		tag: ["Insignia"],
+	},
+	{
+		id: 14,
+		img: "../img/Insignia_Arco-iris.webp",
+		nameItem: "Insígnia Arco-íris",
+		description:
+			"Insígnia Arco-íris, obtenha derrotando Erika no ginásio de tipo Planta ou compre aqui!",
+		value: 600,
+		addCart: "Adicionar ao carrinho",
+		tag: ["Insignia"],
+	},
+	{
+		id: 15,
+		img: "../img/Insignia_Alma.webp",
+		nameItem: "Insígnia Alma",
+		description:
+			"Insígnia Alma, obtenha derrotando Koga no ginásio de tipo Veneno ou compre aqui!",
+		value: 650,
+		addCart: "Adicionar ao carrinho",
+		tag: ["Insignia"],
+	},
+	{
+		id: 16,
+		img: "../img/Insignia_Pantano.webp",
+		nameItem: "Insígnia Pântano",
+		description:
+			"Insígnia Pântano, obtenha derrotando Sabrina no ginásio de tipo Psíquico ou compre aqui!",
+		value: 800,
+		addCart: "Adicionar ao carrinho",
+		tag: ["Insignia"],
+	},
+	{
+		id: 17,
+		img: "../img/Insignia_Vulcao.webp",
+		nameItem: "Insígnia Vulcão",
+		description:
+			"Insígnia da Vulcão, obtenha derrotando Blaine no ginásio de tipo Fogo ou compre aqui!",
+		value: 900,
+		addCart: "Adicionar ao carrinho",
+		tag: ["Insignia"],
+	},
+	{
+		id: 18,
+		img: "../img/Insignia_Terra.webp",
+		nameItem: "Insígnia Terra",
+		description:
+			"Insígnia da Terra, obtenha derrotando Giovanni no ginásio de tipo Terra ou compre aqui!",
+		value: 1000,
+		addCart: "Adicionar ao carrinho",
+		tag: ["Insignia"],
+	},
 ];
