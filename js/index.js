@@ -67,6 +67,8 @@ function addItem(item) {
 			</div>`;
 
 	total += dataItem.value;
+	let qtdCarrinho = document.querySelector(".cart__content").childElementCount;
+	document.querySelector(".quantidade").innerHTML = qtdCarrinho;
 
 	document.querySelector(".preco__total").innerText = `R$ ${total}`;
 }
