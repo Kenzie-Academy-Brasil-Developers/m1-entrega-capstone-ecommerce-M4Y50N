@@ -40,7 +40,7 @@ function rmItem(item) {
 			data[item.id.substring(2)].qtd -= 1;
 			repeated();
 			total -= data[item.id.substring(2)].value;
-			document.querySelector(".preco__total").innerHTML = total;
+			document.querySelector(".preco__total").innerHTML = `R$ ${total}`;
 			qtdCarrinho -= 1;
 			document.querySelector(".quantidade").innerHTML = qtdCarrinho;
 			break;
