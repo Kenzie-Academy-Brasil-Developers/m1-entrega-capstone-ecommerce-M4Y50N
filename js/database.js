@@ -7,6 +7,7 @@ const data = [
 		description: "Pokemon de tipo elétrico, com altos atributos de SPD e ATK.",
 		value: 25,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Elétrico"],
 	},
 	{
@@ -17,6 +18,7 @@ const data = [
 			"Esse pokemon é muito rápido e consegue causar muito dano com suas skills.",
 		value: 100,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Elétrico"],
 	},
 	{
@@ -27,7 +29,8 @@ const data = [
 			"Pokemon de tipo planta, com altos atributos de SPATK e SPDEF.",
 		value: 25,
 		addCart: "Adicionar ao carrinho",
-		tag: ["Planta/Veneno"],
+		qtd: 0,
+		tag: ["Planta", "Veneno"],
 	},
 	{
 		id: 3,
@@ -37,7 +40,8 @@ const data = [
 			"Uma boa escolha para tankar e também consegue dar um dano razoável com sua Razor Leaf.",
 		value: 50,
 		addCart: "Adicionar ao carrinho",
-		tag: ["Planta/Veneno"],
+		qtd: 0,
+		tag: ["Planta", "Veneno"],
 	},
 	{
 		id: 4,
@@ -47,7 +51,8 @@ const data = [
 			"Causa bastante dano e tanka com suas skills de Solar Beam e Mega Drain respectivamente.",
 		value: 100,
 		addCart: "Adicionar ao carrinho",
-		tag: ["Planta/Veneno"],
+		qtd: 0,
+		tag: ["Planta", "Veneno"],
 	},
 	{
 		id: 5,
@@ -57,6 +62,7 @@ const data = [
 			"Considerado o melhor pokemon inicial, esse pokemon tem um alto atributo de SPATK e ATK.",
 		value: 30,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Fogo"],
 	},
 	{
@@ -66,6 +72,7 @@ const data = [
 		description: "Esse pokemon tem um alto atributo de SPATK e SPD.",
 		value: 70,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Fogo"],
 	},
 	{
@@ -76,7 +83,8 @@ const data = [
 			"Salvo de explicações o Charizard é um pokemon muito forte e consegue acabar o combate em segundos.",
 		value: 150,
 		addCart: "Adicionar ao carrinho",
-		tag: ["Fogo/Voador"],
+		qtd: 0,
+		tag: ["Fogo", "Voador"],
 	},
 	{
 		id: 8,
@@ -85,6 +93,7 @@ const data = [
 		description: "Pokemon de tipo água, com altos atributos de SPDEF e DEF.",
 		value: 25,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Água"],
 	},
 	{
@@ -94,6 +103,7 @@ const data = [
 		description: "Pokemon de tipo água, com altos atributos de SPDEF e DEF.",
 		value: 50,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Água"],
 	},
 	{
@@ -103,6 +113,7 @@ const data = [
 		description: "Pokemon de tipo água, com altos atributos de SPDEF e DEF.",
 		value: 100,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Água"],
 	},
 	{
@@ -113,6 +124,7 @@ const data = [
 			"Insígnia Rocha, obtenha derrotando Brock no ginásio de tipo Pedra ou compre aqui!",
 		value: 300,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Insignia"],
 	},
 	{
@@ -123,6 +135,7 @@ const data = [
 			"Insígnia Cascata, obtenha derrotando Misty no ginásio de tipo Água ou compre aqui!",
 		value: 350,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Insignia"],
 	},
 	{
@@ -133,6 +146,7 @@ const data = [
 			"Insígnia Trovao, obtenha derrotando Sg. Surge no ginásio de tipo Elétrico ou compre aqui!",
 		value: 400,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Insignia"],
 	},
 	{
@@ -143,6 +157,7 @@ const data = [
 			"Insígnia Arco-íris, obtenha derrotando Erika no ginásio de tipo Planta ou compre aqui!",
 		value: 600,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Insignia"],
 	},
 	{
@@ -153,6 +168,7 @@ const data = [
 			"Insígnia Alma, obtenha derrotando Koga no ginásio de tipo Veneno ou compre aqui!",
 		value: 650,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Insignia"],
 	},
 	{
@@ -163,6 +179,7 @@ const data = [
 			"Insígnia Pântano, obtenha derrotando Sabrina no ginásio de tipo Psíquico ou compre aqui!",
 		value: 800,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Insignia"],
 	},
 	{
@@ -173,6 +190,7 @@ const data = [
 			"Insígnia da Vulcão, obtenha derrotando Blaine no ginásio de tipo Fogo ou compre aqui!",
 		value: 900,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Insignia"],
 	},
 	{
@@ -183,6 +201,7 @@ const data = [
 			"Insígnia da Terra, obtenha derrotando Giovanni no ginásio de tipo Terra ou compre aqui!",
 		value: 1000,
 		addCart: "Adicionar ao carrinho",
+		qtd: 0,
 		tag: ["Insignia"],
 	},
 ];

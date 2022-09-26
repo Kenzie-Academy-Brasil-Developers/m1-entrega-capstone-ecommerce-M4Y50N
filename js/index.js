@@ -3,6 +3,7 @@ let carrinho = document.querySelector(".cart__content");
 
 //add item
 let divTotal = document.querySelector(".total"),
+	qtdCarrinho = 0,
 	total = 0,
 	vazio = document.querySelector(".vazio");
 
@@ -18,25 +19,12 @@ function addItem(item) {
 	let id = item.id.substring(2),
 		dataItem = data[id];
 
-	// let repetidos = [];
-	// carrinho.childNodes.forEach((x) => {
-	// 	x.id != undefined ? repetidos.push(x.id) : x;
-	// });
+	dataItem.qtd += 1;
 
-	carrinho.innerHTML += `
-			<div id="d_${id}"  class="item__cart">
-				<div class="item__cart__img bg-white">
-					<img src="${dataItem.img}" alt="" />
-				</div>
-				<div class="info">
-					<div class="item__cart__nome h4">${dataItem.nameItem}</div>
-					<div class="item__cart__preco h4 teitemt-primary">R$ ${dataItem.value}</div>
-					<div id="c_${id}"  class="remover small" onclick="rmItem(event.target)">Remover</div>
-				</div>
-			</div>`;
+	repeated();
 
 	total += dataItem.value;
-	let qtdCarrinho = document.querySelector(".cart__content").childElementCount;
+	qtdCarrinho += 1;
 	document.querySelector(".quantidade").innerHTML = qtdCarrinho;
 
 	document.querySelector(".preco__total").innerText = `R$ ${total}`;
@@ -48,12 +36,13 @@ function rmItem(item) {
 
 	for (let i = 0; items.length > i; i++) {
 		if (items[i].id.substring(2) == item.id.substring(2)) {
-			carrinho.removeChild(item.parentNode.parentNode);
+			// carrinho.removeChild(item.parentNode.parentNode);
+			data[item.id.substring(2)].qtd -= 1;
+			repeated();
 			total -= data[item.id.substring(2)].value;
 			document.querySelector(".preco__total").innerHTML = total;
-
-			document.querySelector(".quantidade").innerHTML =
-				document.querySelector(".cart__content").childElementCount;
+			qtdCarrinho -= 1;
+			document.querySelector(".quantidade").innerHTML = qtdCarrinho;
 			break;
 		}
 	}
@@ -64,10 +53,53 @@ function rmItem(item) {
 	}
 }
 
+//remover repetido
+function repeated() {
+	let copyCart = [...data],
+		noRepeat = [],
+		li = document.createElement("li");
+
+	noRepeat = copyCart.filter((x, i, arr) => {
+		return (
+			x.id != (arr[i + 1] != undefined ? arr[i + 1].id : arr[i + 1]) &&
+			x.qtd != 0
+		);
+	});
+
+	carrinho.innerHTML = "";
+	noRepeat.forEach((element) => {
+		li.innerHTML = `
+		<div id="d_${element.id}"  class="item__cart">
+			<div class="item__cart__img bg-white">
+				<img src="${element.img}" alt="" />
+			</div>
+			<div class="info">
+				<div class="item__cart__nome h4">${element.nameItem}</div>
+				<div class="item__cart__preco h4 text-primary">R$ ${element.value}</div>
+				<div class="small text-secondary">qtd. ${element.qtd}</div>
+				<div id="c_${element.id}"  class="remover small" onclick="rmItem(event.target)">Remover</div>
+			</div>
+		</div>`;
+		carrinho.innerHTML += `
+		<div id="d_${element.id}"  class="item__cart">
+			<div class="item__cart__img bg-white">
+				<img src="${element.img}" alt="" />
+			</div>
+			<div class="info">
+				<div class="item__cart__nome h4">${element.nameItem}</div>
+				<div class="item__cart__preco h4 text-primary">R$ ${element.value}</div>
+				<div class="small text-secondary">qtd. ${element.qtd}</div>
+				<div id="c_${element.id}"  class="remover small" onclick="rmItem(event.target)">Remover</div>
+			</div>
+		</div>`;
+	});
+	console.log(noRepeat);
+}
+
 let resultSearch = [],
 	searchBar = document.getElementById("search__bar");
 
-function renderiza(element) {
+function renderizaCard(element) {
 	let ul = document.querySelector(".ul__items");
 
 	let li = document.createElement("li");
@@ -75,13 +107,32 @@ function renderiza(element) {
 	li.classList.add("card");
 	li.classList.add("bg-gray-0");
 
+	let tag = "";
+	element.tag.forEach((x) => {
+		if (x.toLowerCase() == "veneno")
+			tag += `<div class="clas veneno small bg-primary fw-bold">${x}</div>`;
+		else if (x.toLowerCase() == "planta") {
+			tag += `<div class="clas planta small bg-primary fw-bold">${x}</div>`;
+		} else if (x.toLowerCase() == "fogo") {
+			tag += `<div class="clas fire small bg-primary fw-bold">${x}</div>`;
+		} else if (x.toLowerCase() == "voador") {
+			tag += `<div class="clas fly small bg-primary fw-bold">${x}</div>`;
+		} else if (x.toLowerCase() == "elétrico") {
+			tag += `<div class="clas eletrico small bg-primary fw-bold">${x}</div>`;
+		} else if (x.toLowerCase() == "água") {
+			tag += `<div class="clas agua small bg-primary fw-bold">${x}</div>`;
+		} else {
+			tag += `<div class="clas  small bg-primary fw-bold">${x}</div>`;
+		}
+	});
+
 	li.innerHTML = `
         <div class="card__head">
             <img src="${element.img}" alt="${element.nameItem}" />
         </div>
         <div class="card__body bg-white">
 			<div>
-				<div class="clas small bg-primary fw-bold">${element.tag}</div>
+				${tag}
 				<h3 class="title h3">${element.nameItem}</h3>
 			</div>
             <p class="desc bodybold">
@@ -94,6 +145,7 @@ function renderiza(element) {
         </div>
     `;
 
+	tag = "";
 	ul.appendChild(li);
 }
 
@@ -106,6 +158,9 @@ function showCard() {
 		} else if (
 			x.description.split(" ").filter((k) => {
 				return k.toLowerCase() == searchBar.value.toLowerCase();
+			}).length ||
+			x.description.split(" ").filter((k) => {
+				return k.toLowerCase().split(".") == searchBar.value.toLowerCase();
 			}).length ||
 			x.nameItem.split(" ").filter((k) => {
 				return k.toLowerCase() == searchBar.value.toLowerCase();
@@ -121,7 +176,7 @@ function showCard() {
 	ul.innerHTML = "";
 
 	resultSearch.map((x) => {
-		renderiza(x);
+		renderizaCard(x);
 	});
 	resultSearch = [];
 }

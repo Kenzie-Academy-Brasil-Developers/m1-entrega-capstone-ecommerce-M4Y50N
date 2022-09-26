@@ -150,6 +150,7 @@ main {
 	margin-top: 50px !important;
 	padding-bottom: 50px;
 
+	height: 100vh;
 	display: flex;
 	justify-content: space-between;
 
@@ -217,11 +218,22 @@ main {
 	flex-direction: column;
 	border: 2px solid var(--grey-0);
 	transition: all 0.3s ease-in-out;
+
+	/* animation: itemsAppear 0.3s ease; */
 }
 
 .card:hover {
 	box-shadow: 0px 3px 10px 3px var(--grey-0);
-	transform: translateY(-20px);
+	animation: hoverCard 0.1s ease;
+}
+
+@keyframes hoverCard {
+	0% {
+		transform: translateY(-20px);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }
 
 .card__head {
@@ -247,6 +259,36 @@ main {
 	display: inline-block;
 
 	padding: 5px 10px;
+	margin: 0px 2px;
+}
+
+.veneno {
+	background-color: #b97fc9;
+}
+
+.planta {
+	background-color: #9bcc50;
+}
+
+.fire {
+	background-color: #fd7d24;
+}
+
+.fly {
+	background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+	background-color: #3dc7ef;
+	color: #212121;
+}
+
+.eletrico {
+	background: linear-gradient(180deg, #eed535 50%, #eed535 50%);
+	background-color: #eed535;
+	color: #212121;
+}
+
+.agua {
+	background: linear-gradient(180deg, #4592c4 50%, #4592c4 50%);
+	background-color: #4592c4;
 }
 
 .title {
@@ -350,4 +392,15 @@ main {
 .total div {
 	display: flex;
 	justify-content: space-between;
+}
+
+@keyframes itemsAppear {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
