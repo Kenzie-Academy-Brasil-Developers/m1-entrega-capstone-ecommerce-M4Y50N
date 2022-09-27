@@ -93,7 +93,6 @@ function repeated() {
 			</div>
 		</div>`;
 	});
-	console.log(noRepeat);
 }
 
 let resultSearch = [],
@@ -156,17 +155,10 @@ function showCard() {
 		if (searchBar.value == "") {
 			resultSearch.push(x);
 		} else if (
-			x.description.split(" ").filter((k) => {
-				return k.toLowerCase() == searchBar.value.toLowerCase();
-			}).length ||
-			x.description.split(" ").filter((k) => {
-				return k.toLowerCase().split(".") == searchBar.value.toLowerCase();
-			}).length ||
-			x.nameItem.split(" ").filter((k) => {
-				return k.toLowerCase() == searchBar.value.toLowerCase();
-			}).length ||
+			x.description.toLowerCase().includes(searchBar.value.toLowerCase()) ||
+			x.nameItem.toLowerCase().includes(searchBar.value.toLowerCase()) ||
 			x.tag.filter((k) => {
-				return k.toLowerCase() == searchBar.value.toLowerCase();
+				return k.toLowerCase().includes(searchBar.value.toLowerCase());
 			}).length
 		) {
 			resultSearch.push(x);
